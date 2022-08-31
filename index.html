@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0px auto;
+    
+}
+h1{
+    text-align: center;
+    color: white;
+    background-color: rgb(8, 255, 29);
+    width: 25%;
+    margin: 0px auto 20px;
+    box-shadow: 2px 3px 8px 4px rgb(161 122 102);
+    padding: 5px;
+    border-radius: 10px;
+}
+div img{
+    height: 70vh;
+    border: 2px solid gray;
+    box-shadow: 2px 5px 13px 7px rgb(0, 0, 0);
+    border-radius: 20px;
+    position: relative;
+}
+body{
+    background-color: #1b262a;
+}
+#Name{
+    margin-top: 20px;
+    box-shadow: none;
+}
+</style>
+<body>
+    <h1>Auto Changing Light</h1>
+    <div><img id="tomato" src="img/Untitled-20000.png" alt=""></div>
+    <h1 id="Name">Creat By Sudipta</h1>
+    <script>
+        function randomColor(){
+            var randomColor = Math.floor(Math.random()*16777215).toString(16);
+            const showColor = document.getElementById('tomato');
+            showColor.style.backgroundColor = `#${randomColor}`;
+        }
+
+    randomColor();
+    setInterval(() => {
+        randomColor();
+    }, 800);
+
+    function randomColorName(){
+            var randomColor = Math.floor(Math.random()*16777215).toString(16);
+            const showColor = document.getElementById('Name');
+            if(showColor == "white"){
+                showColor.style.backgroundColor = 'black';
+            }
+            else{
+                showColor.style.backgroundColor = `#${randomColor}`;
+            }            
+        }
+
+    randomColor();
+    setInterval(() => {
+        randomColorName();
+    }, 2000);
+    </script>
+</body>
+</html>
